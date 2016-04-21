@@ -29,25 +29,39 @@
     NSDate *date1 = [[NSCalendar currentCalendar] dateFromComponents:c];
     c.month = 10;
     NSDate *date2 = [[NSCalendar currentCalendar] dateFromComponents:c];
+    c.month = 12;
+    NSDate *date3 = [[NSCalendar currentCalendar] dateFromComponents:c];
     
     NSTimeInterval timeInterval1 = [date1 timeIntervalSince1970];
     NSTimeInterval timeInterval2 = [date2 timeIntervalSince1970];
+    NSTimeInterval timeInterval3 = [date3 timeIntervalSince1970];
     
     JCDayModel *dayModel1 = [JCDayModel dayModelWith:timeInterval1];
     JCDayModel *dayModel2 = [JCDayModel dayModelWith:timeInterval2];
+    JCDayModel *dayModel3 = [JCDayModel dayModelWith:timeInterval3];
     
     //dataSource及delegate配置
     [self.datePickerView setDataSource:self];
     [self.datePickerView setConfigureCellBlock:^(JCDateCollectionViewCell *collectionViewCell, NSIndexPath *indexPath){
-        [collectionViewCell.titleLabel setText:[NSString stringWithFormat:@"%ld", indexPath.segment*10+indexPath.row]];
+        [collectionViewCell.titleLabel setText:[NSString stringWithFormat:@"%ld", indexPath.row]];
     }];
     
     [self.datePickerView setReusableViewBlcok:^(JCDateHeaderCollectionReusableView *reusableView, NSString *elementKind, NSIndexPath *indexPath){
-        if (indexPath.segment == 0) {
-            [reusableView.titleLabel setText:[NSString stringWithFormat:@"%ld年%ld月", dayModel1.year, dayModel1.month]];
-            return ;
+        
+        switch (indexPath.segment) {
+            case 0:
+                [reusableView.titleLabel setText:[NSString stringWithFormat:@"%ld年%ld月", dayModel1.year, dayModel1.month]];
+                break;
+            case 1:
+                [reusableView.titleLabel setText:[NSString stringWithFormat:@"%ld年%ld月", dayModel2.year, dayModel2.month]];
+                break;
+            case 2:
+                [reusableView.titleLabel setText:[NSString stringWithFormat:@"%ld年%ld月", dayModel3.year, dayModel3.month]];
+                break;
+            default:
+                break;
         }
-        [reusableView.titleLabel setText:[NSString stringWithFormat:@"%ld年%ld月", dayModel2.year, dayModel2.month]];
+        
     }];
     
     [self.datePickerView setDidSelectBlock:^(NSIndexPath *indexPath){
@@ -61,11 +75,11 @@
 }
 
 - (NSInteger)numberOfSegmentsInDatePickerView:(JCDatePicker *)datePicker {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)jcDatePicker:(JCDatePicker *)datePicker numberOfItemsInSegment:(NSInteger)segment {
-    return 10;
+    return 30;
 }
 
 @end
