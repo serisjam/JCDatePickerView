@@ -8,9 +8,7 @@
 
 #import "JCDatePicker.h"
 
-#import "JCDatePickerCollectionViewFlowLayout.h"
-
-@interface JCDatePicker () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface JCDatePicker () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -41,7 +39,7 @@ static NSString * const headerReuseIdentifier = @"dateHeaderCollectionReuseView"
 
 - (void)setup {
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:[[JCDatePickerCollectionViewFlowLayout alloc] init]];
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
     [_collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_collectionView registerClass:[JCDateCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [_collectionView registerClass:[JCDateHeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
@@ -88,6 +86,33 @@ static NSString * const headerReuseIdentifier = @"dateHeaderCollectionReuseView"
     }
     
     return reusableview;
+}
+
+
+#pragma mark UICollectionViewLayoutDelegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
+    return CGSizeMake(size.width/7.0f, 35.0f);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10.0f, 0.0, 10.0f, 0.0);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 10.0f;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0f;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
+    return CGSizeMake(size.width, 25.0f);
 }
 
 #pragma mark UICollectionDelegate

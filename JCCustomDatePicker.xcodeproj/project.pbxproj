@@ -15,7 +15,6 @@
 		EBB7F3F91CC8602900D0C42A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB7F3F71CC8602900D0C42A /* LaunchScreen.storyboard */; };
 		EBB7F4061CC8608600D0C42A /* JCDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F4051CC8608600D0C42A /* JCDatePicker.m */; };
 		EBB7F4091CC8619500D0C42A /* JCDateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F4081CC8619500D0C42A /* JCDateCollectionViewCell.m */; };
-		EBB7F40C1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F40B1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.m */; };
 		EBB7F40F1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F40E1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.m */; };
 		EBB7F4151CC8C2ED00D0C42A /* JCDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F4141CC8C2ED00D0C42A /* JCDayModel.m */; };
 		EBB7F41B1CC8D54900D0C42A /* NSIndexPath+JCDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB7F41A1CC8D54900D0C42A /* NSIndexPath+JCDatePicker.m */; };
@@ -36,8 +35,6 @@
 		EBB7F4051CC8608600D0C42A /* JCDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDatePicker.m; sourceTree = "<group>"; };
 		EBB7F4071CC8619500D0C42A /* JCDateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDateCollectionViewCell.h; sourceTree = "<group>"; };
 		EBB7F4081CC8619500D0C42A /* JCDateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDateCollectionViewCell.m; sourceTree = "<group>"; };
-		EBB7F40A1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDatePickerCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		EBB7F40B1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDatePickerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		EBB7F40D1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDateHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		EBB7F40E1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCDateHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		EBB7F4131CC8C2ED00D0C42A /* JCDayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCDayModel.h; sourceTree = "<group>"; };
@@ -111,8 +108,6 @@
 				EBB7F4081CC8619500D0C42A /* JCDateCollectionViewCell.m */,
 				EBB7F40D1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.h */,
 				EBB7F40E1CC8B09900D0C42A /* JCDateHeaderCollectionReusableView.m */,
-				EBB7F40A1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.h */,
-				EBB7F40B1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.m */,
 			);
 			path = JCDatePicker;
 			sourceTree = SOURCE_ROOT;
@@ -188,7 +183,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB7F3F11CC8602900D0C42A /* ViewController.m in Sources */,
-				EBB7F40C1CC86ADE00D0C42A /* JCDatePickerCollectionViewFlowLayout.m in Sources */,
 				EBB7F3EE1CC8602900D0C42A /* AppDelegate.m in Sources */,
 				EBB7F4151CC8C2ED00D0C42A /* JCDayModel.m in Sources */,
 				EBB7F41B1CC8D54900D0C42A /* NSIndexPath+JCDatePicker.m in Sources */,
